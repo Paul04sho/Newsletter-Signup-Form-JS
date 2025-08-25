@@ -1,0 +1,256 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
+/* General styling */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+:root{
+    --blue-800: hsl(234, 29%, 20%);
+    --blue-700: hsl(235, 18%, 26%);
+    --grey: hsl(0, 0%, 59%);
+    --white: hsl(0, 0%, 100%);
+    --red: hsl(4, 100%, 67%);
+}
+
+body{
+    font-family: 'Roboto', sans-serif;
+    font-size: clamp(0.95rem 1vw + 3rem);
+    line-height: 1.3;
+    color: var(--blue-800);
+    background-color: var(--blue-700);
+}
+
+.signup-image{
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+.desktop-illustration{
+    display: none;
+}
+
+.tablet-illustration{
+    display: none;
+}
+
+ul{
+    list-style: none;
+}
+
+ul img{
+    max-width: 100%;
+}
+
+ul div{
+    display: flex;
+    align-items: center;
+    justify-content: left;
+    gap: 0.75rem;
+    padding: 0.5rem 0;
+}
+
+ul li{
+    padding: 0.5rem 0;
+    line-height: 1.4;
+   /*border: 4px solid yellow;*/
+}
+
+.container{
+    width: 100%;
+    max-width: 375px;
+    border-radius: 10px;
+    margin: 0 auto;
+    position: relative;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    background-color: var(--white);
+}
+
+.signup-content{
+    padding: 1.5rem 2rem;
+}
+
+.signup-content h1{
+    font-size: 2.3rem;
+    font-weight: 700;
+    margin-bottom: 1.1rem;
+}
+
+form{
+    margin-top: 1.5rem;
+}
+
+form label{
+    font-size: 1rem;
+    padding: 0.4rem 0;
+    font-weight: 500;
+    display: block;
+    width: 100%;
+}
+
+.flex-layout span{
+    position: absolute;
+    right: 2rem;
+    display: inline;
+    float: right;
+    bottom: 155px;
+}
+
+.visually-hidden{
+    font-size: 1rem;
+    color: var(--white);
+    display: none;
+}
+
+form input{
+    display: block;
+    width: 100%;
+    border: 1px solid var(--grey);
+    margin-bottom: 1rem;
+    padding: 1rem;
+    border-radius: 0.5rem;
+}
+
+form input[type="email"]:focus{
+    outline: none;
+    border: 2px solid var(--blue-700);
+}
+
+/* Styling buttons */
+form button{
+    display: block;
+    width: 100%;
+    background-color: var(--blue-700);
+    color: var(--white);
+    font-weight: 700;
+    margin-top: 1.5rem;
+    padding: 1rem;
+    border: none;
+    border-radius: 0.5rem;
+    cursor: pointer;
+}
+
+.btn-close{
+    font-size: 1rem;
+    margin-top: 6rem;
+    padding: 1.1rem 1rem;
+    width: 100%;
+    background-color: var(--blue-700);
+    color: var(--white);
+    font-weight: 700;
+    border: none;
+    border-radius: 0.5rem;
+    cursor: pointer;
+}
+
+/* active state */
+form button:focus{
+    background-color: var(--red);
+    box-shadow: 0 6px 16px rgb(241, 160, 149);
+}
+
+.btn-close:focus{
+    background-color: var(--red);
+    box-shadow: 0 6px 16px rgb(241, 160, 149);
+}
+
+
+.mobile-success-message{
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: var(--white);
+    display: block;
+    z-index: 999;
+    padding: 6rem 1.5rem;
+}
+
+.mobile-success-message img{
+    width: 60px;
+    height: 60px;
+    margin-bottom: 1.5rem;
+}
+
+.mobile-success-message h2{
+    font-size: 2.4rem;
+    font-weight: 600;
+    width: 100%;
+    max-width: 200px;
+    margin-bottom: 1.2rem;
+}
+
+
+.mobile-success-message p{
+    width: 100%;
+    max-width: 90%;
+    font-size: 1.2rem;
+}
+
+.hidden{
+    display: none; /* Hide the success message by default */
+}
+
+/* Media Queries for larger screens */
+@media screen and(min-width: 768px){
+    .mobile-illustration{
+        display: none;
+    }
+
+    .tablet-illustration{
+        display: block;
+        width: 100%;
+        height: auto;
+        border-top-left-radius: 0.625rem;
+        border-top-right-radius: 0.625rem;
+    }
+
+    main{
+        display: flex;
+        flex-direction: column;
+    }
+
+    .container{
+        max-width: 540px;
+        border-radius: 15px;
+    }
+
+    .mobile-success-message{
+        max-width: 100%;
+        background-color: var(--blue-700);
+    }
+
+    .mobile-success-message img{
+        width: 50px;
+        height: 50px;
+    }
+
+    .mobile-success-message-container{
+        width: 100%;
+        max-width: 425px;
+        margin: 0 auto;
+       /* border: 5px solid red; */
+        background-color: var(--white);
+        padding: 3rem;
+        border-radius: 24px;
+    }
+
+    .mobile-success-message p{
+        max-width: 100%;
+        text-align: left;
+    }
+
+    .btn-close{
+        margin-top: 2rem;
+        padding: 1rem;
+    }
+}
+
+
+
+
