@@ -11,7 +11,6 @@
   
   <title>Frontend Mentor | Newsletter sign-up form with success message</title>
   <link rel="stylesheet" href="CSS/style.css">
-  <script defer src="main.js"></script>
 </head>
 
 <body>
@@ -33,7 +32,10 @@
         </ul>
 
         <form novalidate id="signup-form">
-          <div class="flex-layout"><label for="email">Email address</label><span class="visually-hidden"></span></div>
+          <div class="flex-layout">
+            <label for="email">Email address</label>
+            <span class="error-message"></span>
+          </div>
           <input type="email" name="email" placeholder="email@company.com" required>
           <button type="submit">Subscribe to monthly newsletter</button>
         </form>
@@ -52,5 +54,6 @@
       </section>
     </main>
   </div>
+  <script defer src="main.js"></script>
 </body>
 </html>
