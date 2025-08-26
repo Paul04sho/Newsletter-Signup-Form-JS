@@ -3,7 +3,7 @@ const form = document.getElementById('signup-form');
 const emailInput = form.querySelector('input[type="email"]');
 const successMessage = document.querySelector('.mobile-success-message');
 const closeButton = successMessage.querySelector(".btn-close");
-const errorMessageText = document.querySelector('.visually-hidden');
+const errorMessageText = document.querySelector('.error-message');
 
 // Event listeners
 closeButton.addEventListener(
@@ -30,7 +30,7 @@ form.addEventListener(
         }
         else{
             // Show error message
-            successMessage.classList.add('hidden');
+            errorMessageText.classList.remove('hidden');
         }
 
         const target = successMessage.querySelector('strong');
@@ -42,6 +42,7 @@ form.addEventListener(
         }
         if (validationResult === true){
             errorMessageText.textContent = '';
+            errorMessageText.classList.add('hidden');
         }
     }
 
@@ -52,8 +53,7 @@ function validateEmail(email) {
    // Check emptiness
     if (email === ''){
         errorMessageText.textContent = 'Email is required';
-        errorMessageText.classList.remove('visually-hidden');
-        errorMessageText.style.color = 'red';
+        errorMessageText.classList.remove('hidden');
         return 'Email is required';
     }
 
@@ -62,7 +62,6 @@ function validateEmail(email) {
     const isValidEmail = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     if (!isValidEmail.test(email)) {
         errorMessageText.textContent = 'valid email address is required.';
-        errorMessageText.style.color = 'red';
 
         return '';
     }
