@@ -23,10 +23,11 @@ body{
     background-color: var(--blue-700);
 }
 
-.signup-image{
+.mobile-illustration{
     display: block;
     width: 100%;
     height: auto;
+    border-radius: 0.625rem;
 }
 
 .desktop-illustration{
@@ -63,7 +64,7 @@ ul li{
     width: 100%;
     max-width: 375px;
     border-radius: 10px;
-    margin: 0 auto;
+    margin: 1rem auto;
     position: relative;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     background-color: var(--white);
@@ -285,7 +286,6 @@ form button:focus{
         margin: 2rem auto;
     }
 }
-
 
 
 
